@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cá Cược Liên Minh Huyền Thoại </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      background: #000 url('https://phongvu.vn/cong-nghe/wp-content/uploads/2025/04/lck-2025-2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
+      z-index: 0;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      background: linear-gradient(90deg, #ffcc00, #ff4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    /* CSS cho logo ĐẠI LÝ HOÀNG VŨ */
+    .main-logo {
+      max-width: 300px; /* Điều chỉnh kích thước tối đa của logo */
+      height: auto;
+      margin: 0px auto 20px auto; /* Căn giữa và tạo khoảng cách */
+      display: block; /* Đảm bảo logo nằm trên một dòng riêng */
+    }
+    .banner {
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #ff0000;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ff0000aa;
+    }
+    .banner h2 {
+      font-size: 22px;
+      color: #00ffcc;
+    }
+    .banner h3 {
+      color: #ff6666;
+    }
+    .countdown {
+      font-size: 22px;
+      margin: 20px 0;
+      color: yellow;
+      font-weight: bold;
+    }
+    .button {
+      background: #ff4500;
+      color: #fff;
+      padding: 15px 30px;
+      margin: 10px auto 0 auto;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff4500aa;
+      max-width: 280px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #e63900;
+    }
+    .section {
+      margin: 40px 0;
+      text-align: left;
+    }
+    h2 {
+      color: #ffd700;
+      font-size: 24px;
+    }
+    ul, ol {
+      padding-left: 25px;
+      margin-top: 10px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    .highlight {
+      background: #ffff00;
+      color: #000;
+      padding: 4px 8px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .team-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .team-card {
+      background: #1a1a1a;
+      border: 2px solid #444;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 200px;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .team-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffffaa;
+    }
+    .team-card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+    .team-card .name {
+      padding: 10px;
+      background: #111;
+      color: #00ffff;
+      font-weight: bold;
+    }
+    .flex-row-2col {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .flex-row-2col > div {
+      flex: 1;
+      min-width: 45%;
+    }
+    /* Phần trận hot */
+    .hot-match-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .hot-match-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 0, 0, 0.2);
+      border: 2px solid red;
+      border-radius: 12px;
+      padding: 10px 15px;
+      width: 300px;
+      box-shadow: 0 0 15px red;
+    }
+    .hot-match-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .vs-text {
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 0 10px;
+      white-space: nowrap;
+    }
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 700px;
+      margin: 20px auto 0 auto;
+    }
+
+    /* Bắt đầu CSS cho phần tử thông báo hoạt động - CONTAINER */
+    .activity-notifications-container {
+      position: fixed;
+      bottom: 20px; /* Vị trí từ đáy màn hình */
+      left: 20px;  /* Vị trí từ lề trái màn hình */
+      z-index: 9999; /* Đảm bảo nằm trên các phần tử khác */
+      display: flex;
+      flex-direction: column-reverse; /* Để thông báo mới nhất nằm ở dưới cùng của danh sách */
+      align-items: flex-start;
+      gap: 10px; /* Khoảng cách giữa các thông báo */
+      max-height: 80vh; /* Giới hạn chiều cao để không bị tràn màn hình */
+      overflow-y: hidden; /* Ẩn thanh cuộn nếu quá nhiều */
+      /* Các thuộc tính này đảm bảo container hiển thị đúng trên mobile */
+      max-width: 90%;
+      box-sizing: border-box; /* Đảm bảo padding không làm tràn width */
+    }
+
+    /* CSS cho TỪNG THÔNG BÁO CON */
+    .activity-notification {
+      background-color: rgba(30, 30, 30, 0.9); /* Nền tối hơn, mờ */
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      min-width: 280px;
+      /* Không đặt max-width ở đây để nó kế thừa từ container hoặc điều chỉnh tự động */
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ */
+
+      /* Hiệu ứng ẩn/hiện ban đầu */
+      opacity: 0;
+      transform: translateY(100px); /* Bắt đầu từ dưới đi lên */
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Chuyển động mượt */
+    }
+
+    .activity-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive cho mobile */
+    @media (max-width: 768px) {
+      .activity-notifications-container {
+        bottom: 10px;
+        left: 10px;
+        right: 10px; /* Giãn ra hai bên trên mobile */
+        align-items: center; /* Căn giữa các thông báo trên mobile */
+        max-width: calc(100% - 20px); /* Trừ padding hai bên */
+      }
+      .activity-notification {
+        min-width: auto; /* Cho phép chiều rộng tự động điều chỉnh */
+        width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+        font-size: 13px;
+        padding: 10px 15px;
+      }
+    }
+    /* Kết thúc CSS cho phần tử thông báo hoạt động */
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💰Sàn Cá Cược Liên Minh  - CHƠI LÀ CÓ TIỀN</h1>
+
+    <div class="banner">
+      <h2>🔥 Hôm qua có người vừa ăn <span class="highlight">999 TRIỆU</span></h2>
+      <h3>⏱️ 6,361 người đang đặt cược trực tiếp</h3>
+    </div>
+
+    <div class="countdown">
+      🎁 CÒN 29 SUẤT NHẬN 88K – KẾT THÚC SAU: <br />
+      00 Giờ | 59 Phút | 20 Giây
+    </div>
+
+    <div class="flex-row-2col section">
+      <div>
+        <h2>🎉 ƯU ĐÃI TÂN THỦ </h2>
+        <ul>
+          <li>✅ Tặng ngay <strong>88K</strong> khi đăng ký</li>
+          <li>💰 Nạp đầu X3 tài khoản – chơi lớn với vốn nhỏ</li>
+          <li>⚡ Nạp 100K nhận 300K để ôm kèo</li>
+        </ul>
+      </div>
+      <div>
+        <h2>💬 CÁCH THAM GIA </h2>
+        <ol>
+          <li>Đăng ký tài khoản</li>
+          <li>Vào mục thể thao điện tử</li>
+          <li>Chọn trận đấu Liên Minh và đặt cược</li>
+          <li>Thắng kèo → Thanh toán nhanh gọn</li>
+        </ol>
+      </div>
+    </div>
+
+    <a class="button" href="https://kxebm.mr88asia.com/register.html" target="_blank">📝 ĐĂNG KÝ NGAY</a>
+
+    <div class="section">
+      <h2>🚀 TẠI SAO CHỌN CHÚNG TÔI</h2>
+      <ul>
+        <li>🛡️ Không group – Không lùa gà – Không gạ kéo</li>
+        <li>💳 Giao dịch trực tiếp: Binance, Momo, Banking</li>
+        <li>✅ Không lưu info – Không qua trung gian</li>
+      </ul>
+    </div>
+
+    <div class="team-section">
+      <h2>🏆 ĐỘI HÌNH HOT NHẤT HÔM NAY</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://cdn.ithethao.vn//uploads/2025/03/26/t1-phan-hoi-ve-phat-bieu-cua-ceo-lien-quan-toi-vu-zeus_247356.jpg" alt="T1" />
+          <div class="name">T1</div>
+        </div>
+        <div class="team-card">
+          <img src="https://ggmeo.com/images/doi-hinh-lmht/drx-logo.jpg" alt="DRX" />
+          <div class="name">DRX</div>
+        </div>
+        <div class="team-card">
+          <img src="https://logowik.com/content/uploads/images/gen-g6111.jpg" alt="DK" />
+          <div class="name">DK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="activityNotificationsContainer" class="activity-notifications-container">
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const messages = [
+        "Ẩn danh Sói Đỏ đã đặt cược 8M",
+        "Người chơi Mãnh Hổ vừa thắng lớn 15M",
+        "Ẩn danh Đại Bàng vừa rút 10M",
+        "Tài khoản VIP Kim Cương vừa nạp 50M",
+        "Người chơi Thỏ Trắng đã đặt cược 3M",
+        "Ẩn danh Thiên Long đã thắng 22M",
+        "Người chơi Gấu Trúc vừa rút 7M",
+        "Tài khoản VIP Voi Chúa đã nạp 30M",
+        "Ẩn danh Cá Mập đã đặt cược 25M",
+        "Người chơi Gấu Bắc Cực vừa thắng 12M"
+      ];
+      let currentIndex = 0;
+      const notificationsContainer = document.getElementById('activityNotificationsContainer');
+      const maxNotifications = 5; // Số thông báo tối đa hiển thị cùng lúc
+
+      function showNextNotification() {
+        if (!notificationsContainer) return;
+
+        // Tạo một phần tử thông báo mới
+        const notificationBox = document.createElement('div');
+        notificationBox.className = 'activity-notification';
+        notificationBox.textContent = messages[currentIndex];
+
+        // Thêm thông báo mới vào container
+        // Sử dụng prepend để thông báo mới nhất nằm ở trên cùng (flex-direction: column-reverse sẽ đảo ngược lại)
+        notificationsContainer.prepend(notificationBox);
+
+        // Hiển thị thông báo với hiệu ứng
+        setTimeout(() => {
+          notificationBox.classList.add('show');
+        }, 50); // Một chút độ trễ để hiệu ứng transition hoạt động
+
+        currentIndex = (currentIndex + 1) % messages.length;
+
+        // Xóa thông báo cũ nếu vượt quá số lượng tối đa
+        if (notificationsContainer.children.length > maxNotifications) {
+          const oldestNotification = notificationsContainer.lastElementChild;
+          if (oldestNotification) {
+            // Thêm lớp để kích hoạt hiệu ứng ẩn trước khi xóa khỏi DOM
+            oldestNotification.classList.remove('show');
+            setTimeout(() => {
+              oldestNotification.remove();
+            }, 500); // Đợi cho hiệu ứng ẩn hoàn tất
+          }
+        }
+
+        // Gọi lại hàm sau một khoảng thời gian nhất định
+        setTimeout(showNextNotification, 2000); // Mỗi 2 giây xuất hiện một thông báo mới
+      }
+
+      // Bắt đầu chuỗi thông báo
+      setTimeout(showNextNotification, 1000); // Bắt đầu sau 1 giây khi tải trang
+    });
+  </script>
+</body>
+</html>
